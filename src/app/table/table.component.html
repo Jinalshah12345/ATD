@@ -1,0 +1,117 @@
+<body>
+  
+
+  <div class="bg">
+
+<header class="header-1">
+    <div class="branding">
+      <a class="nav-link">
+        <clr-icon shape="shield"></clr-icon>
+        <span class="titleheading">Miracle Software Systems Inc</span>
+      </a>
+    </div>
+    <!-- <div class="header-nav">
+      <a class="active nav-link nav-icon">
+        <clr-icon shape="home"></clr-icon>
+      </a>
+      <a class=" nav-link nav-icon">
+        <clr-icon shape="cog"></clr-icon>
+      </a>
+    </div> -->
+    
+    <form class="search">
+      <span class="title" color="white">Main Menu</span>
+      <!-- <label for="search_input">
+        <input id="search_input" type="text" placeholder="Search for keywords...">
+      </label> -->
+    </form>
+    <div class="header-actions">
+      <clr-dropdown class="dropdown bottom-right">
+        <span>Jinal Kalpesh Shah</span>
+        <button class="nav-icon" clrDropdownToggle>
+    
+          <clr-icon shape="user"></clr-icon>
+          
+          
+      
+        </button>
+        <!-- <div class="dropdown-menu">
+          <a clrDropdownItem>About</a>
+          <a clrDropdownItem>Preferences</a>
+          <a clrDropdownItem>Log out</a>
+        </div> -->
+      </clr-dropdown>
+    </div>
+  </header>
+ 
+  
+  
+  <div class="subtitle">Find Locations</div>
+  
+
+       
+  <div class="card">
+    <h6>Search by Location address, City, State etc</h6>
+    <form class="search">
+      
+      <label for="search_input">
+        <input id="search_input" type="text" placeholder="Search for keywords...">
+      </label>
+    </form>
+<div class="tablee">
+    <clr-datagrid [(clrDgSingleSelected)]="selectedUser" (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
+      <clr-dg-column [clrDgField]="'id'">id</clr-dg-column>
+      <clr-dg-column [clrDgField]="'name'">name</clr-dg-column>
+      <clr-dg-column [clrDgField]="'username'">username</clr-dg-column>
+      <clr-dg-column [clrDgField]="'email'">email</clr-dg-column>
+      <clr-dg-column [clrDgField]="'street'">street</clr-dg-column>
+      <clr-dg-column [clrDgField]="'suite'">suite</clr-dg-column>
+      <clr-dg-column [clrDgField]="'city'">city</clr-dg-column>
+      <clr-dg-column [clrDgField]="'zipcode'">zipcode</clr-dg-column>
+      <clr-dg-column [clrDgField]="'lat'">lat</clr-dg-column>
+      <clr-dg-column [clrDgField]="'lng'">lng</clr-dg-column>
+      <clr-dg-column [clrDgField]="'phone'">phone</clr-dg-column>
+      <clr-dg-column [clrDgField]="'website'">website</clr-dg-column>
+      <clr-dg-column [clrDgField]="'name'">company_name</clr-dg-column>
+      <clr-dg-column [clrDgField]="'catchPhrase'">catchPhrase</clr-dg-column>
+      <clr-dg-column [clrDgField]="'bs'">bs</clr-dg-column>
+
+     
+    
+      <clr-dg-row *ngFor="let user of users$ | async" [clrDgItem]="user">
+        <clr-dg-cell>{{user.id}}</clr-dg-cell>
+        <clr-dg-cell>{{user.name}}</clr-dg-cell>
+        <clr-dg-cell>{{user.username}}</clr-dg-cell>
+        <clr-dg-cell>{{user.email}}</clr-dg-cell>
+        <clr-dg-cell>{{user.address.street}}</clr-dg-cell>
+        <clr-dg-cell>{{user.address.suite}}</clr-dg-cell>
+        <clr-dg-cell>{{user.address.city}}</clr-dg-cell>
+        <clr-dg-cell>{{user.address.zipcode}}</clr-dg-cell>
+        <clr-dg-cell>{{user.address.geo.lat}}</clr-dg-cell>
+        <clr-dg-cell>{{user.address.geo.lng}}</clr-dg-cell>
+        <clr-dg-cell>{{user.phone}}</clr-dg-cell>
+        <clr-dg-cell>{{user.website}}</clr-dg-cell>
+        <clr-dg-cell>{{user.company.name}}</clr-dg-cell>
+        <clr-dg-cell>{{user.company.catchPhrase}}</clr-dg-cell>
+        <clr-dg-cell>{{user.company.bs}}</clr-dg-cell>
+        
+      </clr-dg-row>
+    
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="3" [(clrDgPage)]="currentPage" [clrDgTotalItems]="total">
+          <clr-dg-page-size [clrPageSizeOptions]="[3]">Users per page</clr-dg-page-size>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} users$
+        </clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+    Selected user: <span class="name" *ngIf="selectedUser">{{selectedUser.name}}</span> 
+  </div>
+  </div>
+
+  <footer>
+  
+  </footer>
+
+</div>
+  
+</body>
