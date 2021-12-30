@@ -34,7 +34,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
 
  
-    // this.users$ = this.service.getAllData(this.currentPage);
+    this.users$ = this.service.getAllData(this.currentPage);
    
   }
 
@@ -47,16 +47,6 @@ export class TableComponent implements OnInit {
 
   }
 
-  // getAllData(){
-
-  //   this.service.getAllData().subscribe((res)=>{
-  //     console.log(res,"res==>");
-
-  //     this.users.data = res.data;
-      
-  //   });
-
-  // }
- 
+  
 
 }
