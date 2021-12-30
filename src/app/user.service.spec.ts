@@ -6,7 +6,7 @@ import { User } from './models/user';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { windowWhen } from 'rxjs';
+
 
 
 describe('UserService', () => {
